@@ -6,6 +6,8 @@ const Switch = ReactRouter.Switch;
 const NavBar = require('./NavBar');
 const Home = require('./Home');
 
+
+
 class App extends React.Component {
     render() {
         return (
@@ -13,7 +15,7 @@ class App extends React.Component {
             <div> 
                 <NavBar/>
                 <Switch>
-                    <Route exact path='/' component={Home} />
+                    <Route exact path='/' component={Home}  />
 
                     <Route render={function () {
                         return <p>Not Found</p>

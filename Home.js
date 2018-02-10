@@ -5,7 +5,25 @@ const posts = [
     {id: 2,img:'https://i.ytimg.com/vi/dmZ-jmxJi1A/maxresdefault.jpg', title: 'Installation', content: 'You can install React from npm.'}
   ];
 
-
+  function Footer(props) {
+    return (
+      <footer>
+      Copyright Кристина Ветрова
+    </footer>
+    )
+  }
+  
+  function SideBar(props) {
+    return (
+      <div className="vertical-menu">
+        <a href="#" className="active">Home</a>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+      </div>
+    )
+  }
 
 class Post extends React.Component {
     
@@ -16,20 +34,29 @@ class Post extends React.Component {
 
     render () {
     let content = this.state.map((post) =>
-    <div className="article" key={post.id}>
+    <div key={post.id}>
       <h1>{post.title}</h1>
       <img src={post.img}/>
       <p>{post.content}</p>
     </div>);
     return (
         <div>
+          <div className = 'layout'>
+          <div className='article'>
       {content}
+      </div>
+      <SideBar/>
+
+          </div>
+
+      <Footer/>
     </div>
     )
   
 }
 
 }
+
 
 
 
